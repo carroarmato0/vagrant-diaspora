@@ -5,6 +5,7 @@ postgresql: &postgresql
   username: "<%= @db_user %>"
   password: "<%= @db_password %>"
   encoding: unicode
+  database: "<%= @db_name %>"
 
 mysql: &mysql
   adapter: mysql2
@@ -37,16 +38,11 @@ combined: &combined
   <<: *common
 development:
   <<: *combined
-  database: diaspora_development
 production:
   <<: *combined
-  database: diaspora_production
 test:
   <<: *combined
-  database: "diaspora_test"
 integration1:
   <<: *combined
-  database: diaspora_integration1
 integration2:
   <<: *combined
-  database: diaspora_integration2
