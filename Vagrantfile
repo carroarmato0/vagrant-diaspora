@@ -8,4 +8,9 @@ Vagrant.configure(2) do |config|
     puppet.manifest_file = "site.pp"
     puppet.module_path = "puppet/modules"
   end
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 4096
+    v.cpus = 2
+  end
+  config.vm.network "private_network", ip: "192.168.50.10"
 end
